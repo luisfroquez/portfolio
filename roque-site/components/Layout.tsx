@@ -1,16 +1,11 @@
-import {
-  Center,
-  Flex,
-  useColorModeValue,
-  useMediaQuery,
-  VStack
-} from '@chakra-ui/react'
+import { Flex, useColorModeValue, useMediaQuery } from '@chakra-ui/react'
 import Navbar from './navbar/Navbar'
 
 const Layout = ({ children }: any) => {
   const color = useColorModeValue('black', 'white')
   const bg = useColorModeValue('white', 'black')
   const [isLTmd] = useMediaQuery('(min-width: 48em)')
+
   return (
     <Flex
       flexDir="column"

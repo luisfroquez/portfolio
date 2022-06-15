@@ -9,7 +9,7 @@ const About = () => {
       </Head>
 
       <Center w="100%" h="100%">
-        <Heading fontSize="11xl">{"ABOUT"}</Heading>
+        <Heading fontSize="11xl">ABOUT</Heading>
       </Center>
     </>
   )

@@ -9,7 +9,7 @@ const LogoSpiner = () => {
   return (
     <Center
       w="100%"
-      h="100%"
+      h="100vh"
       position="absolute"
       bgColor={bg}
       color={color}

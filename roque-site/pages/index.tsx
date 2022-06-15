@@ -1,3 +1,6 @@
+import dynamic from 'next/dynamic'
+import Head from 'next/head'
+import { Suspense } from 'react'
 import {
   Center,
   Heading,
@@ -7,21 +10,21 @@ import {
   useMediaQuery,
   VStack
 } from '@chakra-ui/react'
-import { OrbitControls } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
-import Head from 'next/head'
-import { Suspense, useState } from 'react'
+import { OrbitControls } from '@react-three/drei'
 import Zacata from '../components/3D/Zacata'
+
+// const Zacata = dynamic(() => import('../components/3D/Zacata'))
 
 const index = () => {
   const color = useColorModeValue('black', 'white')
   const bg = useColorModeValue('white', 'black')
-  const lightingColor = 'white'
+  const lightingColor = 'gold'
   const headingSize = '8rem'
-  //isLargerThan"md"
-  const [isLarger] = useMediaQuery('(min-width: 48em)')
-  const canvasHeight = isLarger ? '100%' : '500px'
 
+  const [isLTmd] = useMediaQuery('(min-width: 48em)')
+
+  const canvasHeight = isLTmd ? '100%' : '500px'
   const canvasStyle = { background: bg, height: canvasHeight }
   return (
     <>
@@ -31,7 +34,7 @@ const index = () => {
       <Stack
         w="100%"
         h="100%"
-        direction={isLarger ? 'row' : 'column'}
+        direction={isLTmd ? 'row' : 'column'}
         spacing={0}
         borderBottomWidth={1}
         borderColor={color}
@@ -56,14 +59,14 @@ const index = () => {
           h={canvasHeight}
           bg={bg}
           overflow="visible"
-          borderLeftWidth={isLarger ? 1 : 0}
+          borderLeftWidth={isLTmd ? 1 : 0}
           borderColor={color}
         >
           <Canvas style={canvasStyle}>
             <OrbitControls
               autoRotate
-              enableZoom={isLarger}
-              enableRotate={isLarger}
+              enableZoom={isLTmd}
+              enableRotate={isLTmd}
             />
 
             <directionalLight

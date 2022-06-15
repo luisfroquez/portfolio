@@ -1,26 +1,35 @@
 import { AppProps } from 'next/app'
+import dynamic from 'next/dynamic'
 import { ChakraProvider } from '@chakra-ui/react'
 import Layout from '../components/Layout'
 import { theme } from '../theme/theme'
-import { useEffect, useState } from 'react'
-import LogoSpiner from '../components/Loader/LogoSpiner'
+import React, { useEffect, useState } from 'react'
+const LogoSpiner = dynamic(() => import('../components/Loader/LogoSpiner'))
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const [isLoading, setIsLoading] = useState(true)
+  const [isMounted, setIsMounted] = useState(false)
 
   useEffect(() => {
     return () => {
       setTimeout(() => {
-        setIsLoading(false)
-      }, 1000)
+        setIsMounted(true)
+      }, 3000)
     }
   }, [])
 
+  // useEffect(() => {
+  //   setIsMounted(true)
+  // }, [])
+
   return (
-    <ChakraProvider resetCSS theme={theme}>
-      <Layout>
-        {isLoading ? <LogoSpiner /> : <Component {...pageProps} />}
-      </Layout>
+    <ChakraProvider theme={theme}>
+      {isMounted ? (
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      ) : (
+        <LogoSpiner />
+      )}
     </ChakraProvider>
   )
 }
