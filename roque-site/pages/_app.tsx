@@ -1,15 +1,17 @@
+import '../styles/globals.css'
 import { AppProps } from 'next/app'
 import dynamic from 'next/dynamic'
+import { useEffect, useState } from 'react'
 import { ChakraProvider } from '@chakra-ui/react'
+import { motion } from 'framer-motion'
 import Layout from '../components/Layout'
 import { theme } from '../theme/theme'
-import { useEffect, useState } from 'react'
-import { motion } from 'framer-motion'
-import "../styles/globals.css"
+
 const LogoSpiner = dynamic(() => import('../components/Loader/LogoSpiner'))
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   const [isMounted, setIsMounted] = useState(false)
+
   const variants = {
     pageInitial: {
       opacity: 0
@@ -21,14 +23,6 @@ function MyApp({ Component, pageProps, router }: AppProps) {
       }
     }
   }
-
-  // useEffect(() => {
-  //   return () => {
-  //     setTimeout(() => {
-  //       setIsMounted(true)
-  //     }, 3000)
-  //   }
-  // }, [])
 
   useEffect(() => {
     setIsMounted(true)
