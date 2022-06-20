@@ -1,7 +1,7 @@
 import React from 'react'
 import Typed from 'typed.js'
 
-const coolFrontend = () => {
+const CoolFrontend = () => {
   // Create reference to store the DOM element containing the animation
   const el = React.useRef(null)
   // Create reference to store the Typed instance itself
@@ -37,4 +37,4 @@ const coolFrontend = () => {
     </div>
   )
 }
-export default coolFrontend
+export default CoolFrontend

@@ -12,7 +12,7 @@ import {
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import Zacata from '../components/3D/Zacata'
-import coolFrontend from '../components/Home/coolFrontend'
+import CoolFrontend from '../components/Home/coolFrontend'
 
 const Home = () => {
   const color = useColorModeValue('black', 'white')
@@ -56,7 +56,7 @@ const Home = () => {
           </VStack>
 
           <Text fontSize="1.25rem" lineHeight="1.25rem">
-            {coolFrontend()}
+            {CoolFrontend()}
           </Text>
         </VStack>
 
