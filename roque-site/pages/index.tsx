@@ -4,8 +4,10 @@ import { Suspense } from 'react'
 import {
   Center,
   Heading,
+  HStack,
   Stack,
   Text,
+  Tooltip,
   useColorModeValue,
   useMediaQuery,
   VStack
@@ -13,13 +15,14 @@ import {
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import Zacata from '../components/3D/Zacata'
+import coolFrontend from '../components/Home/coolFrontend'
 
 // const Zacata = dynamic(() => import('../components/3D/Zacata'))
 
 const index = () => {
   const color = useColorModeValue('black', 'white')
   const bg = useColorModeValue('white', 'black')
-  const lightingColor = 'gold'
+  const lightingColor = 'white'
   const headingSize = '8rem'
 
   const [isLTmd] = useMediaQuery('(min-width: 48em)')
@@ -39,18 +42,51 @@ const index = () => {
         borderBottomWidth={1}
         borderColor={color}
       >
-        <VStack align="left" p={[4, 10]} h="100%">
-          <Heading fontSize={headingSize} lineHeight={headingSize}>
-            Hello.
-          </Heading>
-          <Heading fontSize={headingSize} lineHeight={headingSize}>
-            I am
-          </Heading>
-          <Heading fontSize={headingSize} lineHeight={headingSize}>
-            Luis!
-          </Heading>
-          <Text as="h2" fontSize="xl" lineHeight={headingSize} pl={2}>
-            a cool frontend desingveloper
+        <VStack
+          align="left"
+          p={[4, 10]}
+          h="100%"
+          justifyContent="space-between"
+        >
+          <VStack spacing={0} align="left">
+            <Heading as="h2" fontSize={headingSize} lineHeight={headingSize}>
+              Hello,
+            </Heading>
+            <Heading fontSize={headingSize} lineHeight={headingSize}>
+              I am
+            </Heading>
+            <Heading fontSize={headingSize} lineHeight={headingSize}>
+              Luis!
+            </Heading>
+          </VStack>
+
+          {/* <Text
+              as="h2"
+              className="typing-demo"
+              fontSize="xl"
+              lineHeight="1rem"
+              pl={2}
+            >
+              A cool frontend
+            </Text>
+            <Tooltip
+              label="Designer + developer"
+              bg={bg}
+              color={color}
+              placement="top"
+            >
+              <Text
+                as="h2"
+                fontSize="xl"
+                lineHeight="1rem"
+                pl={2}
+                _hover={{ fontWeight: 'bold' }}
+              >
+                desingveloper.
+              </Text>
+            </Tooltip> */}
+          <Text fontSize="1.25rem" lineHeight="1.25rem">
+            {coolFrontend()}
           </Text>
         </VStack>
 

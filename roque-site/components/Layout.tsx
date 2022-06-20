@@ -14,7 +14,7 @@ const Layout = ({ children }: any) => {
       bg={bg}
       color={color}
       transition="all"
-      transitionDuration="2s"
+      transitionDuration="1s"
       justifyContent="space-between"
     >
       {isLTmd ? (

@@ -31,7 +31,7 @@ const Navbar = () => {
       alignItems="center"
     >
       <Link href="/">
-        <Button fontWeight="normal" fontSize={['md', 'xl']}>
+        <Button fontWeight="normal" fontSize={['md', 'xl']} p={0}>
           LUIS<Text fontWeight="extrabold">ROQUE</Text>
         </Button>
       </Link>
