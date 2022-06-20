@@ -1,13 +1,10 @@
-import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import { Suspense } from 'react'
 import {
   Center,
   Heading,
-  HStack,
   Stack,
   Text,
-  Tooltip,
   useColorModeValue,
   useMediaQuery,
   VStack
@@ -17,9 +14,7 @@ import { OrbitControls } from '@react-three/drei'
 import Zacata from '../components/3D/Zacata'
 import coolFrontend from '../components/Home/coolFrontend'
 
-// const Zacata = dynamic(() => import('../components/3D/Zacata'))
-
-const index = () => {
+const Home = () => {
   const color = useColorModeValue('black', 'white')
   const bg = useColorModeValue('white', 'black')
   const lightingColor = 'white'
@@ -60,31 +55,6 @@ const index = () => {
             </Heading>
           </VStack>
 
-          {/* <Text
-              as="h2"
-              className="typing-demo"
-              fontSize="xl"
-              lineHeight="1rem"
-              pl={2}
-            >
-              A cool frontend
-            </Text>
-            <Tooltip
-              label="Designer + developer"
-              bg={bg}
-              color={color}
-              placement="top"
-            >
-              <Text
-                as="h2"
-                fontSize="xl"
-                lineHeight="1rem"
-                pl={2}
-                _hover={{ fontWeight: 'bold' }}
-              >
-                desingveloper.
-              </Text>
-            </Tooltip> */}
           <Text fontSize="1.25rem" lineHeight="1.25rem">
             {coolFrontend()}
           </Text>
@@ -145,4 +115,4 @@ const index = () => {
   )
 }
 
-export default index
+export default Home
