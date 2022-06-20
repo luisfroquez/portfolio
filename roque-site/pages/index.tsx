@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { Suspense } from 'react'
+import { Suspense, useState } from 'react'
 import {
   Center,
   Heading,
@@ -13,17 +13,21 @@ import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import Zacata from '../components/3D/Zacata'
 import CoolFrontend from '../components/Home/coolFrontend'
+import Link from 'next/link'
 
 const Home = () => {
+  const [hover, setHover] = useState(false)
   const color = useColorModeValue('black', 'white')
   const bg = useColorModeValue('white', 'black')
   const lightingColor = 'white'
-  const headingSize = '8rem'
 
   const [isLTmd] = useMediaQuery('(min-width: 48em)')
 
   const canvasHeight = isLTmd ? '100%' : '500px'
   const canvasStyle = { background: bg, height: canvasHeight }
+
+  const headingSize = hover ? '5rem' : '8rem'
+
   return (
     <>
       <Head>
@@ -43,16 +47,47 @@ const Home = () => {
           h="100%"
           justifyContent="space-between"
         >
-          <VStack spacing={0} align="left">
-            <Heading as="h2" fontSize={headingSize} lineHeight={headingSize}>
-              Hello,
-            </Heading>
-            <Heading fontSize={headingSize} lineHeight={headingSize}>
-              I am
-            </Heading>
-            <Heading fontSize={headingSize} lineHeight={headingSize}>
-              Luis!
-            </Heading>
+          <VStack
+            spacing={0}
+            align="left"
+            w="300px"
+            h="100%"
+            onMouseEnter={() => setHover(true)}
+            onMouseLeave={() => setHover(false)}
+          >
+            <Link href="/about">
+              <Heading
+                as="h2"
+                fontSize={headingSize}
+                lineHeight={headingSize}
+                cursor="pointer"
+                transition="0.5s"
+                _hover={{ borderBottom: '1px white solid' }}
+              >
+                {hover ? 'About' : 'Hello,'}
+              </Heading>
+            </Link>
+            <Link href="/lab">
+              <Heading
+                fontSize={headingSize}
+                lineHeight={headingSize}
+                cursor="pointer"
+                transition="0.25s"
+                _hover={{ borderBottom: '1px white solid' }}
+              >
+                {hover ? 'Work' : 'I am'}
+              </Heading>
+            </Link>
+            <Link href="/contact">
+              <Heading
+                fontSize={headingSize}
+                lineHeight={headingSize}
+                cursor="pointer"
+                _hover={{ borderBottom: '1px white solid' }}
+              >
+                {hover ? 'Contact' : 'Luis!'}
+              </Heading>
+            </Link>
           </VStack>
 
           <Text fontSize="1.25rem" lineHeight="1.25rem">
