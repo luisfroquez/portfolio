@@ -6,14 +6,14 @@ export interface Menuitems {
 export const MenuItems: Menuitems[] = [
   {
     name: 'About',
-    link: '/about'
+    link: '#about'
   },
   {
-    name: 'Lab',
-    link: '/lab'
+    name: 'Work',
+    link: '#Work'
   },
   {
     name: 'Contact',
-    link: '/contact'
+    link: '#contact'
   }
 ]

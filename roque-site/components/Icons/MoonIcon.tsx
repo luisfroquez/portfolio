@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { transition } from "../navbar/ThemeToggle/constants";
+import { transition } from "../../modules/navbar/ThemeToggle/constants";
 
 export const MoonIcon = () => {
   const variants = {

@@ -1,5 +1,6 @@
 import {
   Button,
+  Center,
   HStack,
   Text,
   useColorMode,
@@ -11,12 +12,12 @@ import { HiOutlineMenuAlt4 } from 'react-icons/hi'
 import Link from 'next/link'
 import { ColorModeToggle } from './ThemeToggle/ColorModeToggle'
 import Socials from './Socials'
+import { ZacataLogo } from '../../components/Icons/ZacataLogo'
 
 const Navbar = () => {
-  const color = useColorModeValue('black', 'white')
-  const bg = useColorModeValue('white', 'black')
+  const bg = useColorModeValue('#00000009', '#FFFFFF09')
+  const color = useColorModeValue('gray.900', 'gray.100')
   const { colorMode } = useColorMode()
-
   //isLargerThan"md"
   const [isLTmd] = useMediaQuery('(min-width: 48em)')
 
@@ -25,17 +26,26 @@ const Navbar = () => {
       color={color}
       bg={bg}
       justifyContent="space-between"
-      px={[4, 10]}
-      py={[2, 5]}
-      width="100%"
+      p="1em"
+      width="48em"
       alignItems="center"
+      pos="absolute"
+      top="3em"
+      zIndex={99}
+      backdropFilter="blur(24px)"
+      borderRadius="3em"
     >
       <Link href="/">
-        <Button fontWeight="normal" fontSize={['md', 'xl']} p={0}>
+        {/* <Button fontWeight="normal" fontSize={['md', 'xl']} p={0}>
           LUIS<Text fontWeight="extrabold">ROQUE</Text>
-        </Button>
+        </Button> */}
+        <Link href="#home">
+        <Center cursor="pointer" bg="gray.900" w="40px"  h="40px" borderRadius={100} color="white" p="6px">
+          <ZacataLogo />
+        </Center>
+        </Link>
       </Link>
-      <HStack spacing={{ md: 5 }}>
+      <HStack>
         <HStack>
           <ColorModeToggle />
           <Socials isLarge={isLTmd} />
@@ -46,7 +56,9 @@ const Navbar = () => {
               <Button
                 isActive={false}
                 variant={colorMode === 'light' ? 'light' : 'dark'}
-                fontSize="xl"
+                fontSize="1rem"
+                borderRadius="2em"
+                px={4}
               >
                 {m.name}
               </Button>

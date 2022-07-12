@@ -4,8 +4,6 @@ export const Button = {
   // style object for base or default style
   baseStyle: {
     bg: 'transparent',
-    borderRadius: 0,
-
     _focus: {
       boxShadow: 'none'
     }
@@ -14,7 +12,8 @@ export const Button = {
   sizes: {
     sm: {
       px: 2,
-      py: 1
+      py: 1,
+      borderRadius: "2em",
     }
   },
   // styles for different visual variants ("outline", "solid")

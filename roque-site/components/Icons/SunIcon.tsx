@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { transition } from '../navbar/ThemeToggle/constants'
+import { transition } from '../../modules/navbar/ThemeToggle/constants'
 
 export const SunIcon = () => {
   const whileTap = { scale: 0.95, rotate: 15 }

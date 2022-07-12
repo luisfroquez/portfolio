@@ -1,7 +1,7 @@
 import { Button, useColorMode } from '@chakra-ui/react'
 import Link from 'next/link'
-import { GithubIcon } from '../Icons/GithubIcon'
-import { TwitterIcon } from '../Icons/TwitterIcon'
+import { GithubIcon } from '../../components/Icons/GithubIcon'
+import { TwitterIcon } from '../../components/Icons/TwitterIcon'
 
 const Socials = ({ isLarge }: { isLarge: boolean }) => {
   const { colorMode } = useColorMode()

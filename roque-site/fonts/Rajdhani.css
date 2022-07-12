@@ -1,6 +1,7 @@
 /* rajdhani-300 - latin */
 @font-face {
     font-family: 'Rajdhani';
+    display: swap;
     font-style: normal;
     font-weight: 300;
     src: local(''),
@@ -10,6 +11,7 @@
   /* rajdhani-regular - latin */
   @font-face {
     font-family: 'Rajdhani';
+    display: swap;
     font-style: normal;
     font-weight: 400;
     src: local(''),
@@ -19,6 +21,7 @@
   /* rajdhani-500 - latin */
   @font-face {
     font-family: 'Rajdhani';
+    display: swap;
     font-style: normal;
     font-weight: 500;
     src: local(''),
@@ -28,6 +31,7 @@
   /* rajdhani-600 - latin */
   @font-face {
     font-family: 'Rajdhani';
+    display: swap;
     font-style: normal;
     font-weight: 600;
     src: local(''),
@@ -37,6 +41,7 @@
   /* rajdhani-700 - latin */
   @font-face {
     font-family: 'Rajdhani';
+    display: swap;
     font-style: normal;
     font-weight: 700;
     src: local(''),

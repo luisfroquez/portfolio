@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic'
 import { useEffect, useState } from 'react'
 import { ChakraProvider } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
-import Layout from '../components/Layout'
+import Layout from '../modules/Layout'
 import { theme } from '../theme/theme'
 
 const LogoSpiner = dynamic(() => import('../components/Loader/LogoSpiner'))

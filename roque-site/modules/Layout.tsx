@@ -15,19 +15,11 @@ const Layout = ({ children }: any) => {
       color={color}
       transition="all"
       transitionDuration="1s"
-      justifyContent="space-between"
+      overflow="auto"
+      align="center"
     >
-      {isLTmd ? (
-        <>
-          {children}
-          <Navbar />
-        </>
-      ) : (
-        <>
-          <Navbar />
-          {children}
-        </>
-      )}
+      <Navbar />
+      {children}
     </Flex>
   )
 }
